@@ -12,7 +12,7 @@ namespace AuthApp.Extension
                 {
                     c.WithOrigins("https://localhost:5001", "https://localhost:5002")
                     .AllowAnyHeader()
-                    .AllowAnyMethod()
+                    .AllowAnyMethod();
                 });
             });
         }
