@@ -1,4 +1,5 @@
 using AuthApp.Extension;
+using AuthApp.Filters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,7 +30,18 @@ namespace AuthApp
         {
             services.CORSExtension();
             services.JwtConfiguration();
-            services.AddControllers();
+            services.CustomServices();
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                //this is because the apicontroller attribute automatically do the validation and it cause the request pointer return the request from
+                //entering the action filter which is customised for custom validations.
+                options.SuppressModelStateInvalidFilter = true;
+            });
+            services.AddControllers(options =>
+            {
+                //adds a filter as a service globally
+                options.Filters.AddService<ModelValidationFilterAttribute>();
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AuthApp", Version = "v1" });
@@ -50,7 +62,7 @@ namespace AuthApp
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors();
+            app.UseCors(); 
             app.UseAuthentication();
             app.UseAuthorization();
 

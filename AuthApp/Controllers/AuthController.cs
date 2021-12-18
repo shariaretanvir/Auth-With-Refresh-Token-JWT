@@ -1,4 +1,5 @@
 ﻿using AuthApp.Model;
+using AuthApp.Utilities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -18,11 +19,13 @@ namespace AuthApp.Controllers
     {
         public ILogger<AuthController> Logger { get; }
         public IConfiguration Configuration { get; }
+        public IToken Token { get; }
 
-        public AuthController(ILogger<AuthController> logger, IConfiguration configuration)
+        public AuthController(ILogger<AuthController> logger, IConfiguration configuration,IToken token)
         {
             Logger = logger;
             Configuration = configuration;
+            Token = token;
         }
 
         [HttpPost]
@@ -36,16 +39,14 @@ namespace AuthApp.Controllers
             }
             if(loginModel.UserName=="Akash" && loginModel.Password == "Akash")
             {
-                var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]));
-                var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
-                var tokeOptions = new JwtSecurityToken(
-                    issuer: "Issuer",
-                    audience: "Audience",
-                    claims: new List<Claim>(),
-                    expires: DateTime.Now.AddMinutes(Convert.ToDouble(Configuration["JWT:Expiry"])),
-                    signingCredentials: signinCredentials
-                );
-                tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);                
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name,loginModel.UserName),
+                    new Claim(ClaimTypes.Role, "Manager")
+                };
+
+                tokenString = Token.GenerateToken(claims);
+
             }
             return Ok(new { Token = tokenString });
         }
