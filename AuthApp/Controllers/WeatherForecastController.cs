@@ -26,8 +26,15 @@ namespace AuthApp.Controllers
         }
 
         [HttpGet]
-        [ServiceFilter(typeof(CommonRequestFilter))]
-        [ServiceFilter(typeof(CustomResultFilterAttribute))]
+        [Route("Demo")]
+        public IActionResult Demo()
+        {
+            return Ok("Done");
+        }
+
+        [HttpGet]
+        //[ServiceFilter(typeof(CommonRequestFilter))]
+        //[ServiceFilter(typeof(CustomResultFilterAttribute))]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

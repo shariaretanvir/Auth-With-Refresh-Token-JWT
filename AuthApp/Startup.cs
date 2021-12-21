@@ -1,3 +1,4 @@
+using AspNetCoreRateLimit;
 using AuthApp.Extension;
 using AuthApp.Filters;
 using Microsoft.AspNetCore.Builder;
@@ -28,15 +29,16 @@ namespace AuthApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.CORSExtension();
+            services.ConfigureRateLimit();
+            services.CORSExtension();            
             services.JwtConfiguration();
             services.CustomServices();
-            services.Configure<ApiBehaviorOptions>(options =>
-            {
-                //this is because the apicontroller attribute automatically do the validation and it cause the request pointer return the request from
-                //entering the action filter which is customised for custom validations.
-                options.SuppressModelStateInvalidFilter = true;
-            });
+            //services.Configure<ApiBehaviorOptions>(options =>
+            //{
+            //    //this is because the apicontroller attribute automatically do the validation and it cause the request pointer return the request from
+            //    //entering the action filter which is customised for custom validations.
+            //    options.SuppressModelStateInvalidFilter = true;
+            //});
             services.AddControllers(options =>
             {
                 //adds a filter as a service globally
@@ -46,17 +48,23 @@ namespace AuthApp
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AuthApp", Version = "v1" });
             });
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseIpRateLimiting();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AuthApp v1"));
             }
+
+            //app.UseClientRateLimiting();
 
             app.CustomLog();
             app.UseHttpsRedirection();
