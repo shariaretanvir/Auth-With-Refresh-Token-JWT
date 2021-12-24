@@ -1,5 +1,6 @@
 ﻿using AspNetCoreRateLimit;
 using AuthApp.Utilities;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AuthApp.Extension
@@ -15,10 +16,18 @@ namespace AuthApp.Extension
             services.AddMemoryCache();
 
             //load general configuration from appsettings.json
-            services.Configure<IpRateLimitOptions>(Common.AppSettings.GetSection("IpRateLimiting"));
+            //services.Configure<IpRateLimitOptions>(Common.AppSettings.GetSection("IpRateLimiting"));
 
             //load ip rules from appsettings.json
-            services.Configure<IpRateLimitPolicies>(Common.AppSettings.GetSection("IpRateLimitPolicies"));
+            //services.Configure<IpRateLimitPolicies>(Common.AppSettings.GetSection("IpRateLimitPolicies"));
+
+
+            //load general configuration from appsettings.json
+            services.Configure<ClientRateLimitOptions>(Common.AppSettings.GetSection("ClientRateLimiting"));
+
+            //load client rules from appsettings.json
+            services.Configure<ClientRateLimitPolicies>(Common.AppSettings.GetSection("ClientRateLimitPolicies"));
+
 
             // inject counter and rules stores
             services.AddInMemoryRateLimiting();
@@ -29,9 +38,15 @@ namespace AuthApp.Extension
             // Add framework services.
             //services.AddMvc();
 
+            // https://github.com/aspnet/Hosting/issues/793
+            // the IHttpContextAccessor service is not registered by default.
+            // the clientId/clientIp resolvers use it.
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
             // configuration (resolvers, counter key builders)
             services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
 
+            
 
             return services;
         }

@@ -13,6 +13,7 @@ namespace AuthApp.Extension
             //services.AddScoped<CustomResultFilterAttribute>();
             services.AddScoped<LoggingFilterAttribute>();
             services.AddScoped<ModelValidationFilterAttribute>();
+            //services.AddScoped<CacheFilterAttribute>();
             return services;
         }
     }

@@ -1,6 +1,7 @@
 ﻿using AuthApp.Filters;
 using AuthApp.Model;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -19,10 +20,12 @@ namespace AuthApp.Controllers
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
+        private readonly IMemoryCache memoryCache;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IMemoryCache memoryCache)
         {
             _logger = logger;
+            this.memoryCache = memoryCache;
         }
 
         [HttpGet]
@@ -63,6 +66,44 @@ namespace AuthApp.Controllers
         public IActionResult save1([FromBody] LoginModel loginModel)
         {
             return Ok("Save SUccessfully 1");
+        }
+
+        [HttpGet, Route("GetAll/{name}")]
+        //[ServiceFilter(typeof(CacheFilterAttribute))]
+        public async Task<IActionResult> GetAll(string name)
+        {
+            var cacheKey = "weathers-"+name;
+            if (!memoryCache.TryGetValue(cacheKey, out List<WeatherForecast> cacheWeathers))
+            {
+                cacheWeathers = new List<WeatherForecast>
+                {
+                    new WeatherForecast
+                    {
+                       Summary="Hot"
+                    },
+                    new WeatherForecast
+                    {
+                        Summary="Medium"
+                    },
+                    new WeatherForecast
+                    {
+                        Summary="Cool"
+                    },
+                    new WeatherForecast
+                    {
+                        Summary="Ice"
+                    }
+                };
+                var cacheOptions = new MemoryCacheEntryOptions
+                {
+                    AbsoluteExpiration = DateTime.Now.AddSeconds(10),
+                    Priority = CacheItemPriority.Normal,
+                    SlidingExpiration = TimeSpan.FromSeconds(10)
+                };
+                memoryCache.Set(cacheKey, cacheWeathers, cacheOptions);
+                await Task.Delay(3000);
+            }            
+            return Ok(cacheWeathers);
         }
     }
 }

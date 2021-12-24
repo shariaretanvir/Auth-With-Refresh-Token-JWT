@@ -33,12 +33,12 @@ namespace AuthApp
             services.CORSExtension();            
             services.JwtConfiguration();
             services.CustomServices();
-            //services.Configure<ApiBehaviorOptions>(options =>
-            //{
-            //    //this is because the apicontroller attribute automatically do the validation and it cause the request pointer return the request from
-            //    //entering the action filter which is customised for custom validations.
-            //    options.SuppressModelStateInvalidFilter = true;
-            //});
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                //this is because the apicontroller attribute automatically do the validation and it cause the request pointer return the request from
+                //entering the action filter which is customised for custom validations.
+                options.SuppressModelStateInvalidFilter = true;
+            });
             services.AddControllers(options =>
             {
                 //adds a filter as a service globally
@@ -55,7 +55,8 @@ namespace AuthApp
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseIpRateLimiting();
+            //app.UseIpRateLimiting();
+            app.UseClientRateLimiting();
 
             if (env.IsDevelopment())
             {

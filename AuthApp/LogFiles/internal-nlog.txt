@@ -4201,3 +4201,103 @@ Error Number:2627,State:1,Class:14
 2021-12-21 23:08:04.2089 Info Adding target DatabaseTarget(Name=logfileDB)
 2021-12-21 23:08:04.2582 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
 2021-12-21 23:08:04.5206 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-24 15:56:14.7810 Info Message Template Auto Format enabled
+2021-12-24 15:56:14.8909 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-24 15:56:14.9885 Info Adding target FileTarget(Name=fileTarget)
+2021-12-24 15:56:15.0087 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-24 15:56:15.0332 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-24 15:56:15.0478 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-24 15:56:15.0978 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-24 15:56:16.1232 Info FileTarget(Name=logfileCSV): Deleting old archive file: 'E:\2021\dot net 5\Auth\AuthApp\AuthApp\LogFiles\2021-12-18 CSVLog.csv'.
+2021-12-24 20:58:05.8949 Info Message Template Auto Format enabled
+2021-12-24 20:58:06.1851 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-24 20:58:06.3934 Info Adding target FileTarget(Name=fileTarget)
+2021-12-24 20:58:06.4847 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-24 20:58:06.4946 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-24 20:58:06.5202 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-24 20:58:06.6517 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-24 21:01:48.7093 Info Message Template Auto Format enabled
+2021-12-24 21:01:48.7296 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-24 21:01:48.7803 Info Adding target FileTarget(Name=fileTarget)
+2021-12-24 21:01:48.8002 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-24 21:01:48.8002 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-24 21:01:48.8171 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-24 21:01:49.0887 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-24 21:59:51.0322 Info Message Template Auto Format enabled
+2021-12-24 21:59:51.7612 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-24 21:59:53.3823 Info Adding target FileTarget(Name=fileTarget)
+2021-12-24 21:59:53.7329 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-24 21:59:53.7390 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-24 21:59:53.8086 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-24 21:59:54.5675 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-24 22:05:00.0329 Info Message Template Auto Format enabled
+2021-12-24 22:05:00.1221 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-24 22:05:00.2855 Info Adding target FileTarget(Name=fileTarget)
+2021-12-24 22:05:00.3575 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-24 22:05:00.3629 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-24 22:05:00.3822 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-24 22:05:00.5132 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-24 22:35:10.7085 Info Message Template Auto Format enabled
+2021-12-24 22:35:10.7952 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-24 22:35:11.1814 Info Adding target FileTarget(Name=fileTarget)
+2021-12-24 22:35:11.5688 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-24 22:35:11.6488 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-24 22:35:11.6745 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-24 22:35:11.9171 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-24 22:37:55.5852 Info Message Template Auto Format enabled
+2021-12-24 22:37:55.6076 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-24 22:37:55.7740 Info Adding target FileTarget(Name=fileTarget)
+2021-12-24 22:37:55.9340 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-24 22:37:55.9456 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-24 22:37:55.9602 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-24 22:37:56.0543 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-24 22:42:58.5835 Info Message Template Auto Format enabled
+2021-12-24 22:42:58.7605 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-24 22:42:58.8929 Info Adding target FileTarget(Name=fileTarget)
+2021-12-24 22:42:58.9587 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-24 22:42:58.9724 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-24 22:42:58.9979 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-24 22:42:59.1028 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-24 22:43:48.4127 Info Message Template Auto Format enabled
+2021-12-24 22:43:48.4332 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-24 22:43:48.5919 Info Adding target FileTarget(Name=fileTarget)
+2021-12-24 22:43:48.6745 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-24 22:43:48.6745 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-24 22:43:48.7050 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-24 22:43:48.9156 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-24 22:44:01.8983 Info Message Template Auto Format enabled
+2021-12-24 22:44:01.9854 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-24 22:44:02.2358 Info Adding target FileTarget(Name=fileTarget)
+2021-12-24 22:44:02.3267 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-24 22:44:02.3847 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-24 22:44:02.5055 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-24 22:44:02.8348 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-25 00:48:07.6596 Info Message Template Auto Format enabled
+2021-12-25 00:48:07.7085 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-25 00:48:07.9231 Info Adding target FileTarget(Name=fileTarget)
+2021-12-25 00:48:08.0776 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-25 00:48:08.0847 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-25 00:48:08.1032 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-25 00:48:08.3310 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-25 00:48:08.9621 Info FileTarget(Name=logfileCSV): Deleting old archive file: 'E:\2021\dot net 5\Auth\AuthApp\AuthApp\LogFiles\2021-12-19 CSVLog.csv'.
+2021-12-25 00:51:54.2063 Info Message Template Auto Format enabled
+2021-12-25 00:51:54.2408 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-25 00:51:54.3872 Info Adding target FileTarget(Name=fileTarget)
+2021-12-25 00:51:54.4565 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-25 00:51:54.4565 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-25 00:51:54.4874 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-25 00:51:54.6066 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-25 00:52:10.7443 Info Message Template Auto Format enabled
+2021-12-25 00:52:10.7804 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-25 00:52:10.8895 Info Adding target FileTarget(Name=fileTarget)
+2021-12-25 00:52:11.2508 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-25 00:52:11.2766 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-25 00:52:11.2942 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-25 00:52:11.3874 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
+2021-12-25 01:10:58.8180 Info Message Template Auto Format enabled
+2021-12-25 01:10:59.0121 Info Loading assembly: NLog.Web.AspNetCore
+2021-12-25 01:10:59.4177 Info Adding target FileTarget(Name=fileTarget)
+2021-12-25 01:10:59.5488 Info Adding target FileTarget(Name=logfileCSV)
+2021-12-25 01:10:59.5488 Info Adding target DatabaseTarget(Name=logfileDB)
+2021-12-25 01:10:59.6055 Info Adding target ColoredConsoleTarget(Name=consoleTarget)
+2021-12-25 01:10:59.8167 Info Validating config: TargetNames=consoleTarget, fileTarget, logfileCSV, logfileDB, ConfigItems=88, FilePath=E:\2021\dot net 5\Auth\AuthApp\AuthApp/Config/nlog.config
